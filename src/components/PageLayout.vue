@@ -1,7 +1,7 @@
 <template>
-  <div id="post">
+  <div>
     <h1 class="postText">{{text}}</h1>
-    <img :src="imageLink"/>
+    <img :src="imageLink" width="10%" height="10%"/>
   </div>
 </template>
 
@@ -17,11 +17,10 @@ export default {
 </script>
 
 <style>
-  #post{
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  }
   .postText{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
     color: #888888;
+    font-size: 3vw;
   }
 </style>
