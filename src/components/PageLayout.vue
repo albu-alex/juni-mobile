@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1 class="postText">{{text}}</h1>
-    <img :src="imageLink" width="100%" height=auto/>
-    <Feedback/>
+    <img :src="imageLink" width="100%" height=auto />
+    <Feedback counter=0 />
   </div>
 </template>
 
