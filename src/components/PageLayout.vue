@@ -1,13 +1,16 @@
 <template>
   <div>
     <h1 class="postText">{{text}}</h1>
-    <img :src="imageLink" width="10%" height="10%"/>
+    <img :src="imageLink" width="100%" height=auto/>
+    <Feedback/>
   </div>
 </template>
 
 
 <script>
+import Feedback from "@/components/Feedback";
 export default {
+  components: {Feedback},
   props: {
     text: String,
     imageLink: String
@@ -16,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .postText{
     font-family: Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;

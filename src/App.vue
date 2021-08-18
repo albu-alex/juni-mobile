@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <StatusBar/>
-    <PageLayout text="This is my current post" imageLink="./logo.png"/>
+    <PageLayout text="This is my current post" imageLink="https://i.pinimg.com/originals/8a/8f/07/8a8f07c4c49a56b8b05fb5f3b9768ec1.gif"/>
     <PageLayout text="and this is the second post" imageLink="https://procoders.tech/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/07/03a203deee86e43d13f4a61ec66459b2.png.webp"/>
   </div>
 </template>
