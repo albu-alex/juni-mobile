@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button v-on:click="increase" id="like-button"/>
-    <button v-on:click="decrease" id="dislike-button"/>
+    <button v-on:click="increase" :disabled="!isDislikeClicked" id="like-button"/>
+    <button v-on:click="decrease" :disabled="!isLikeClicked" id="dislike-button"/>
     <p>{{counter}}</p>
   </div>
 </template>
@@ -11,14 +11,26 @@
 export default {
   name: "Feedback",
   props:{
-    counter: Number
+    counter: Number,
+    isLikeClicked: Boolean,
+    isDislikeClicked: Boolean
   },
   methods:{
     increase: function(){
-      return this.counter++;
+      if(this.isLikeClicked)
+        this.counter++;
+      else
+        this.counter--;
+      this.isLikeClicked = !this.isLikeClicked;
+      return this.counter;
     },
     decrease: function(){
-      return this.counter--;
+      if(this.isDislikeClicked)
+        this.counter--;
+      else
+        this.counter++;
+      this.isDislikeClicked = !this.isDislikeClicked;
+      return this.counter;
     }
   }
 }
@@ -51,5 +63,9 @@ p{
   font-size: 3vw;
   display: inline-block;
   margin: 0 60px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 </style>
