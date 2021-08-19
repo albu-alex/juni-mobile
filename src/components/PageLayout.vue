@@ -1,5 +1,6 @@
 <template>
   <div>
+    <UserDetails :avatar="avatar" :username="username"/>
     <h1 class="postText">{{text}}</h1>
     <img :src="imageLink" width="100%" height=auto />
     <Feedback counter=0 isLikeClicked="false" isDislikeClicked="false" />
@@ -9,11 +10,14 @@
 
 <script>
 import Feedback from "@/components/Feedback";
+import UserDetails from "@/components/UserDetails";
 export default {
-  components: {Feedback},
+  components: {Feedback, UserDetails},
   props: {
     text: String,
-    imageLink: String
+    imageLink: String,
+    avatar: String,
+    username: String
   },
   name: "PageLayout"
 }
