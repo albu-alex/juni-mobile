@@ -44,6 +44,10 @@ button{
   padding: 0;
   margin: 0 60px;
 }
+button:disabled{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 #like-button{
   background-image: url("https://i.imgur.com/iWLV58H.png");
   background-color: #252525;

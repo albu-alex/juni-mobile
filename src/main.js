@@ -24,7 +24,6 @@ new Vue({
               var post = document.createTextNode("HEY THERE");
               listElement.appendChild(post);
               postsScrolled.appendChild(listElement);
-              window.alert(postsScrolled);
             }
             this.loading = false;
           }, 100);
