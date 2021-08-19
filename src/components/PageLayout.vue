@@ -3,14 +3,14 @@
     <UserDetails :avatar="avatar" :username="username"/>
     <h1 class="postText">{{text}}</h1>
     <img :src="imageLink" width="100%" height=auto />
-    <Feedback counter=0 isLikeClicked="false" isDislikeClicked="false" />
+    <Feedback counter=0 isLikeClicked=false isDislikeClicked=false />
   </div>
 </template>
 
 
 <script>
-import Feedback from "@/components/Feedback";
-import UserDetails from "@/components/UserDetails";
+import Feedback from "./Feedback";
+import UserDetails from "./UserDetails";
 export default {
   components: {Feedback, UserDetails},
   props: {
@@ -29,5 +29,8 @@ export default {
     font-weight: 400;
     color: #888888;
     font-size: 3vw;
+  }
+  div{
+    margin-bottom: 50px;
   }
 </style>
