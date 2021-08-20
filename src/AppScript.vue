@@ -24,7 +24,8 @@ export default {
             for (let i = 0; i < 2; i++) {
               let postsScrolled = document.querySelector("ul");
               let listElement = document.createElement("li");
-              listElement.setAttribute('id', 'post');
+              let elementID = "post" + (listElements.length+1);
+              listElement.setAttribute('id', elementID);
               new PageLayoutConstructor({
                 propsData:{
                   text:"This is post number " + (listElements.length + 1),
@@ -32,7 +33,7 @@ export default {
                   avatar:"https://www.der-windows-papst.de/wp-content/uploads/2019/03/Windows-Change-Default-Avatar-448x400.png",
                   username:"OP_rah"
                 }
-              }).$mount('#post');
+              }).$mount('#'+elementID);
               postsScrolled.appendChild(listElement);
             }
           }, 100);
