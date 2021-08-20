@@ -5,7 +5,7 @@ export default {
   components: {Feedback, UserDetails},
   props: {
     text: String,
-    imageLink: String,
+    imageLink: Array,
     avatar: String,
     username: String
   },
