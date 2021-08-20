@@ -1,8 +1,9 @@
-<!--<script>-->
-<!--export default {-->
-<!--  props: {-->
-<!--    avatar: String-->
-<!--  }-->
-<!--  name: UserDetails-->
-<!--}-->
-<!--</script>-->
+<script>
+export default {
+  props: {
+    avatar: String,
+    username: String
+  },
+  name: "UserDetails",
+}
+</script>

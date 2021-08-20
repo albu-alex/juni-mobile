@@ -5,15 +5,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    avatar: String,
-    username: String
-  },
-  name: "UserDetails"
-}
-</script>
+<script src="./UserDetailsScript.vue"/>
 
 <style scoped>
   div{
