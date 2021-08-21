@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button v-on:click="increase" :disabled="!isDislikeClicked" id="like-button"/>
-    <button v-on:click="decrease" :disabled="!isLikeClicked" id="dislike-button"/>
+    <button v-on:click="increase" :disabled="isDislikeClicked" id="like-button"/>
+    <button v-on:click="decrease" :disabled="isLikeClicked" id="dislike-button"/>
     <p>{{counter}}</p>
   </div>
 </template>

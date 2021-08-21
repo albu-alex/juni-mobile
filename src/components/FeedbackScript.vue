@@ -8,7 +8,7 @@ export default {
   },
   methods:{
     increase: function(){
-      if(this.isLikeClicked)
+      if(!this.isLikeClicked)
         this.counter++;
       else
         this.counter--;
@@ -16,7 +16,7 @@ export default {
       return this.counter;
     },
     decrease: function(){
-      if(this.isDislikeClicked)
+      if(!this.isDislikeClicked)
         this.counter--;
       else
         this.counter++;
