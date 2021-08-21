@@ -10,6 +10,7 @@
                     avatar="https://www.der-windows-papst.de/wp-content/uploads/2019/03/Windows-Change-Default-Avatar-448x400.png"
                     username="OP_rah" /></li>
     </ul>
+    <Loading/>
   </div>
 </template>
 

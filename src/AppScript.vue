@@ -2,12 +2,14 @@
 import StatusBar from "./components/StatusBar";
 import Vue from 'vue';
 import PageLayout from "./components/PageLayout";
+import Loading from "./components/Loading"
 
 export default {
   name: 'App',
   components:{
     StatusBar,
-    PageLayout
+    PageLayout,
+    Loading
   },
   mounted(){
     this.scroll();
