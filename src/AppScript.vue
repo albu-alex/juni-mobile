@@ -17,8 +17,8 @@ export default {
       users: []
     }
   },
-  mounted(){
-    this.scroll();
+  async mounted(){
+    await this.scroll();
   },
   async beforeMount(){
     await this.getInitialUsers();
@@ -29,7 +29,7 @@ export default {
         this.users = response.data.results;
       });
     },
-    scroll(){
+    async scroll(){
       window.onscroll = () => {
         let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
         if (bottomOfWindow) {

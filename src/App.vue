@@ -2,7 +2,7 @@
   <div id="app">
     <StatusBar/>
     <ul>
-    <li v-for="user in users" :key="user"><PageLayout :text=user.location.street.name :imageLink="[user.picture.large, user.picture.medium]"
+    <li v-for="user in users" :key="user"><PageLayout :text="user.name.title + ' ' + user.name.first + ' ' + user.name.last" :imageLink="[user.picture.large, user.picture.medium]"
                     :avatar=user.picture.thumbnail :username=user.login.username /></li>
     </ul>
     <Loading/>
