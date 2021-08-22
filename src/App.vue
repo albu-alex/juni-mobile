@@ -2,13 +2,8 @@
   <div id="app">
     <StatusBar/>
     <ul>
-    <li><PageLayout text="This is my current post" :imageLink="['https://i.pinimg.com/originals/8a/8f/07/8a8f07c4c49a56b8b05fb5f3b9768ec1.gif'
-    ,'https://images.dunelm.com/30676267.jpg?$standardplayerdefault$&img404=noimagedefault']"
-                    avatar="https://www.blexar.com/avatar.png" username="shaquille.oatmeal" /></li>
-    <li><PageLayout text="and this is the second post"
-                :imageLink="['https://procoders.tech/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/07/03a203deee86e43d13f4a61ec66459b2.png.webp']"
-                    avatar="https://www.der-windows-papst.de/wp-content/uploads/2019/03/Windows-Change-Default-Avatar-448x400.png"
-                    username="OP_rah" /></li>
+    <li v-for="user in users" :key="user"><PageLayout :text=user.location.street.name :imageLink="[user.picture.large, user.picture.medium]"
+                    :avatar=user.picture.thumbnail :username=user.login.username /></li>
     </ul>
     <Loading/>
   </div>

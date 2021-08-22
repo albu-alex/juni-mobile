@@ -2,7 +2,8 @@
 import StatusBar from "./components/StatusBar";
 import Vue from 'vue';
 import PageLayout from "./components/PageLayout";
-import Loading from "./components/Loading"
+import Loading from "./components/Loading";
+import axios from "axios";
 
 export default {
   name: 'App',
@@ -11,15 +12,27 @@ export default {
     PageLayout,
     Loading
   },
+  data(){
+    return{
+      users: []
+    }
+  },
   mounted(){
     this.scroll();
   },
+  async beforeMount(){
+    await this.getInitialUsers();
+  },
   methods:{
+    async getInitialUsers(){
+      await axios.get(`https://randomuser.me/api/?results=3`).then((response) => {
+        this.users = response.data.results;
+      });
+    },
     scroll(){
       window.onscroll = () => {
         const PageLayoutConstructor = Vue.extend(PageLayout);
         let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
-
         if (bottomOfWindow) {
           setTimeout(function () {
             let listElements = document.querySelectorAll("li");
