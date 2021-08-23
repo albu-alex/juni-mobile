@@ -1,8 +1,9 @@
 <script>
 import StatusBar from "./components/StatusBar";
-import Vue from 'vue';
 import PageLayout from "./components/PageLayout";
 import Loading from "./components/Loading";
+import Vue from 'vue';
+import UserInput from "./components/UserInput"
 import axios from "axios";
 
 export default {
@@ -10,7 +11,8 @@ export default {
   components:{
     StatusBar,
     PageLayout,
-    Loading
+    Loading,
+    UserInput
   },
   data(){
     return{
@@ -39,6 +41,24 @@ export default {
           });
         }
       }
+    },
+    addNewPost(){
+      let listElements = document.querySelectorAll("li");
+      const PageLayoutConstructor = Vue.extend(PageLayout);
+      let postsScrolled = document.querySelector("ul");
+      let listElement = document.createElement("li");
+      let elementID = "post" + (listElements.length+1);
+      listElement.setAttribute('id', elementID);
+      let postMessage = document.getElementById("addUserPost");
+      new PageLayoutConstructor({
+        propsData:{
+          text:postMessage.value,
+          imageLink:["https://procoders.tech/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/07/03a203deee86e43d13f4a61ec66459b2.png.webp"],
+          avatar:"https://www.der-windows-papst.de/wp-content/uploads/2019/03/Windows-Change-Default-Avatar-448x400.png",
+          username:"owner"
+        }
+      }).$mount('#post');
+      postsScrolled.insertBefore(listElement, postsScrolled.firstChild);
     }
   }
 }
