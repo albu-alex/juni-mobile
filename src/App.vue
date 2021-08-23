@@ -4,7 +4,6 @@
     <textarea id="addUserPost" v-model="message" placeholder="What are you thinking about?" v-on:keydown.enter.prevent="addNewPost"/>
     <button v-on:click="addNewPost">Add your post</button>
     <ul>
-      <li id="post"/>
       <li v-for="user in users" :key="user"><PageLayout :text="user.name.title + ' ' + user.name.first + ' ' + user.name.last" :imageLink="[user.picture.large, user.picture.medium]"
                       :avatar=user.picture.thumbnail :username=user.login.username /></li>
     </ul>
