@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UserDetails :avatar="avatar" :username="username"/>
+    <UserDetails :avatar="avatar" :username="username" :isOwner="isOwner" />
     <h1 class="postText">{{text}}</h1>
     <img v-for="image in imageLink" :key="image" :src="image" width="100%" height=auto />
     <Feedback :counter=0 :isLikeClicked=false :isDislikeClicked=false />
@@ -15,7 +15,7 @@
     font-family: Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;
     color: #888888;
-    font-size: 3vw;
+    font-size: 5vw;
   }
   div{
     margin-bottom: 50px;

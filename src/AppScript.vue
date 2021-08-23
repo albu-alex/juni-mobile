@@ -55,11 +55,12 @@ export default {
           "thumbnail": "https://www.der-windows-papst.de/wp-content/uploads/2019/03/Windows-Change-Default-Avatar-448x400.png",
         },
         "login":{
-          "username" : "owner"
-        }
+          "username" : "owner",
+          "password" : "owner"
+        },
       };
-      console.log(userPost);
       this.users = [userPost].concat(this.users);
+      document.getElementById("addUserPost").value = "";
     }
   }
 }

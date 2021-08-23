@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <StatusBar/>
-    <textarea id="addUserPost" v-model="message" placeholder="What are you thinking about?" v-on:keydown.enter.prevent="addNewPost"/>
+    <textarea id="addUserPost" placeholder="What are you thinking about?" v-on:keydown.enter.prevent="addNewPost"/>
     <button v-on:click="addNewPost">Add your post</button>
     <ul>
-      <li v-for="user in users" :key="user"><PageLayout :text="user.name.title + ' ' + user.name.first + ' ' + user.name.last" :imageLink="[user.picture.large, user.picture.medium]"
-                      :avatar=user.picture.thumbnail :username=user.login.username /></li>
+      <li v-for="user in users" :key=user.id><PageLayout :text="user.name.title + ' ' + user.name.first + ' ' + user.name.last" :imageLink="[user.picture.large, user.picture.medium]"
+                      :avatar=user.picture.thumbnail :username=user.login.username :isOwner=user.login.password /></li>
     </ul>
     <Loading/>
   </div>
@@ -30,6 +30,7 @@ button{
   background-color: #252525;
   color: #AAAAAA;
   border-radius: 4px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 textarea{
   background-color: #252525;

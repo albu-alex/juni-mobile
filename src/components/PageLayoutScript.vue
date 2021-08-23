@@ -7,7 +7,8 @@ export default {
     text: String,
     imageLink: Array,
     avatar: String,
-    username: String
+    username: String,
+    isOwner: Boolean
   },
   name: "PageLayout"
 }

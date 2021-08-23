@@ -2,7 +2,8 @@
 export default {
   props: {
     avatar: String,
-    username: String
+    username: String,
+    isOwner: Boolean
   },
   name: "UserDetails",
 }
