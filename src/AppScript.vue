@@ -52,7 +52,7 @@ export default {
         "picture":{
           "large": "https://procoders.tech/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/07/03a203deee86e43d13f4a61ec66459b2.png.webp",
           "medium": "http://pngimg.com/uploads/ferrari/ferrari_PNG10680.png",
-          "thumbnail": "https://www.der-windows-papst.de/wp-content/uploads/2019/03/Windows-Change-Default-Avatar-448x400.png",
+          "thumbnail": "https://i.imgur.com/cNDCQqa.jpg",
         },
         "login":{
           "username" : "owner",

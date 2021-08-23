@@ -15,8 +15,8 @@
   img{
     display: inline-block;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 10vw;
+    height: 10vw;
     margin: 0 10px;
     border: 3px solid black;
   }
@@ -25,8 +25,8 @@
     --y: 50%;
     display: inline-block;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 10vw;
+    height: 10vw;
     margin: 0 10px;
     border: 3px solid transparent;
     background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), red, blue) border-box;
