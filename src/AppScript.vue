@@ -43,6 +43,11 @@ export default {
       let postMessage = document.getElementById("addUserPost").value;
       if(postMessage === "")
         return;
+      let photoLink = prompt("", "Enter the link of your photo");
+      if(photoLink === null)
+        photoLink = "https://procoders.tech/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/07/03a203deee86e43d13f4a61ec66459b2.png.webp";
+      if(photoLink === "Enter the link of your photo")
+        photoLink = "";
       let userPost ={
         "name":{
           "title" : "Albu",
@@ -50,8 +55,8 @@ export default {
           "last": postMessage,
         },
         "picture":{
-          "large": "https://procoders.tech/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/07/03a203deee86e43d13f4a61ec66459b2.png.webp",
-          "medium": "http://pngimg.com/uploads/ferrari/ferrari_PNG10680.png",
+          "large": photoLink,
+          "medium": "",
           "thumbnail": "https://i.imgur.com/cNDCQqa.jpg",
         },
         "login":{
