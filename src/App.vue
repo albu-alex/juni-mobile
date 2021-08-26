@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <StatusBar/>
-    <textarea id="addUserPost" placeholder="What are you thinking about?" v-on:keydown.enter.prevent="addNewPost"/>
-    <button v-on:click="addNewPost">Add your post</button>
-    <ul>
-      <li v-for="user in users" :key=user.id><PageLayout :text="user.name.title + ' ' + user.name.first + ' ' + user.name.last" :imageLink="[user.picture.large, user.picture.medium]"
-                      :avatar=user.picture.thumbnail :username=user.login.username :isOwner=user.login.password /></li>
-    </ul>
+      <textarea id="addUserPost" placeholder="What are you thinking about?" v-on:keydown.enter.prevent="addNewPost"/>
+      <button v-on:click="addNewPost">Add your post</button>
+      <ul>
+        <li v-for="user in users" :key=user.id><PageLayout :text="user.name.title + ' ' + user.name.first + ' ' + user.name.last" :imageLink="[user.picture.large, user.picture.medium]"
+                        :avatar=user.picture.thumbnail :username=user.login.username :isOwner=user.login.password /></li>
+      </ul>
     <Loading/>
   </div>
 </template>

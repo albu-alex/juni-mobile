@@ -16,6 +16,47 @@ export default {
       users: []
     }
   },
+  created(){
+    let pStart = {x: 0, y:0};
+    let pStop = {x:0, y:0};
+    function swipeStart(event) {
+      if (typeof event['targetTouches'] !== "undefined"){
+        let touch = event.targetTouches[0];
+        pStart.x = touch.screenX;
+        pStart.y = touch.screenY;
+      } else {
+        pStart.x = event.screenX;
+        pStart.y = event.screenY;
+      }
+    }
+    function swipeEnd(event){
+      if (typeof event['changedTouches'] !== "undefined"){
+        let touch = event.changedTouches[0];
+        pStop.x = touch.screenX;
+        pStop.y = touch.screenY;
+      } else {
+        pStop.x = event.screenX;
+        pStop.y = event.screenY;
+      }
+
+      swipeCheck();
+    }
+    function swipeCheck(){
+      let changeY = pStart.y - pStop.y;
+      let changeX = pStart.x - pStop.x;
+      if (isPullDown(changeY, changeX) ) {
+        window.location.reload();
+      }
+    }
+    function isPullDown(dY, dX) {
+      return dY < 0 && (
+          (Math.abs(dX) <= 100 && Math.abs(dY) >= 200)
+          || (Math.abs(dX)/Math.abs(dY) <= 0.3 && dY >= 30)
+      );
+    }
+    document.addEventListener('touchstart', function(e){ swipeStart(e); }, false);
+    document.addEventListener('touchend', function(e){ swipeEnd(e); }, false);
+  },
   async mounted(){
     await this.scroll();
   },
