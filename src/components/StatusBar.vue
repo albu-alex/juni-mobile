@@ -1,3 +1,5 @@
+<!--Component is only shown in mobile version-->
+<!--Replaces the standard iOS status bar with a black one-->
 <template>
   <div id="statusbar"></div>
 </template>

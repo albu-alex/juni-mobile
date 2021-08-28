@@ -13,10 +13,13 @@ export default {
   },
   data(){
     return{
+      //An array which holds all the users retrieved from randomuser.me
+      // For documentation, check randomuser.me
       users: []
     }
   },
   created(){
+    //this part of the script is used to determine when an user wants to use the pull to refresh functionality
     let pStart = {x: 0, y:0};
     let pStop = {x:0, y:0};
     function swipeStart(event) {
@@ -54,8 +57,8 @@ export default {
           || (Math.abs(dX)/Math.abs(dY) <= 0.3 && dY >= 30)
       );
     }
-    document.addEventListener('touchstart', function(e){ swipeStart(e); }, false);
-    document.addEventListener('touchend', function(e){ swipeEnd(e); }, false);
+    document.addEventListener('touchstart', function(event){ swipeStart(event); }, false);
+    document.addEventListener('touchend', function(event){ swipeEnd(event); }, false);
   },
   async mounted(){
     await this.scroll();
@@ -65,11 +68,13 @@ export default {
   },
   methods:{
     async getInitialUsers(){
+      //Gets the first 3 users that are shown to the user when the page first loads
       await axios.get(`https://randomuser.me/api/?results=3`).then((response) => {
         this.users = response.data.results;
       });
     },
     async scroll(){
+      //Adds 2 users on user scroll down; is used to create the infinite scrolling effect
       window.onscroll = () => {
         let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
         if (bottomOfWindow) {
@@ -81,6 +86,7 @@ export default {
       }
     },
     addNewPost(){
+      //function is called when the user wants to add a new post
       let postMessage = document.getElementById("addUserPost").value;
       if(postMessage === "")
         return;

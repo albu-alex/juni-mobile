@@ -1,3 +1,5 @@
+<!--Component is shown when the page is loading-->
+<!--Consists of loading animation-->
 <template>
   <div class="loader">
     <div class="ball1"></div>

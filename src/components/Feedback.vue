@@ -1,5 +1,10 @@
+<!--Is the part under the photos in a certain post-->
+<!--Used to keep track of the like/dislike ratio-->
 <template>
   <div>
+    <!--    counter: The difference between likes and dislikes; is supposed to be 0 in the beginning-->
+    <!--    isDislikeClicked: Boolean; if false, dislike is enabled, otherwise it's disabled-->
+    <!--    isLikeClicked: Boolean; if false, like is enabled, otherwise it's disabled-->
     <button v-on:click="increase" :disabled="isDislikeClicked" id="like-button"/>
     <button v-on:click="decrease" :disabled="isLikeClicked" id="dislike-button"/>
     <p>{{counter}}</p>

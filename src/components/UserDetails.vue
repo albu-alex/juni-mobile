@@ -1,5 +1,9 @@
+<!--This component holds the information of an user which is displayed above the post that the user wrote-->
 <template>
   <div>
+<!--    avatar: The link which directs to the avatar of an user-->
+<!--    isOwner: Holds the password of a certain user and if the password is "owner", then the user is the owner-->
+<!--    username: The username of an user-->
     <img :src="avatar" :id="isOwner" />
     <h1>{{username}}</h1>
   </div>
@@ -20,6 +24,7 @@
     margin: 0 10px;
     border: 3px solid black;
   }
+  /*Custom border for the owner*/
   img#owner{
     --x: 50%;
     --y: 50%;
